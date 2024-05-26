@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h
+        {
+            display: grid;grid-template-rows: 10% 90%;height: 95vh;row-gap: 10px;
+        }
+        .y
+        {
+         display: grid;grid-template-rows: repeat(3, 1fr);grid-template-columns: repeat(4, 1fr);row-gap: 10px;column-gap: 10px;
+        }
+        .t , .b
+        {
+            background-color: #333333;color: white;
+        }
+        .c ,.d, .e, .f, .g
+        {
+            display: grid;grid-template-rows: 25% 75%;border-style: solid;border-color: #333333;
+        }
+        @media (max-width:690px){
+            .y{display: flex;flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+    <div class="h">
+        <div class="x" style="background-color: #333333;color: white;">
+            <span>My website</span>
+            <div style="text-align: right;">
+                <span>Link 1</span>Link 2<span></span>Link 3<span></span>
+            </div>
+        </div>
+        <div class="y">
+            <div class="a" style="grid-column: 1/4;"><h1>This is the main heading</h1>
+
+                Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.Gumbo beet greens com soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</div>
+            <div class="b" style="grid-column-start: 4;grid-column-end: 5;grid-row-start: 1;grid-row-end: 4;">Have you discovered all of the other excellent content on this website?</div>
+            <div class="c">
+                <div class="t">Card One</div>
+                <div>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado.</div>
+            </div>
+            <div class="d">
+                <div class="t">Card Two</div>
+                <div>Daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko.</div>
+            </div>
+            <div class="e">
+                <div class="t">Card Three</div>
+                <div>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.</div>
+            </div>
+            
+            <div class="f">
+                <div class="t">Card Four</div>
+                <div>Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea</div>
+            </div>
+            <div class="g">
+                <div class="t">Card Five</div>
+                <div>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</div>
+        </div>
+
+    </div>
+</body>
+</html>

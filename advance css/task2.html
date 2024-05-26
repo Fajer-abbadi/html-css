@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #f2f2f2;
+            padding: 10px 20px;
+            text-align: right;
+        }
+
+        .top-bar button {
+            background-color: transparent;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .top-bar button:hover {
+            text-decoration: underline;
+        }
+
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .bottom-bar button {
+            background-color: transparent;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .bottom-bar button:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #cbd0cf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #c8e0ec09;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <button>About</button>
+        <button>Store</button>
+        <button>Gmail</button>
+        <button>Images</button>
+    </div>
+
+    <div class="search-container">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo">
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q";><br>
+            <button type="submit">Google search</button>
+            <button type="submit">i'm feeling lucky</button>
+        </form>
+    </div>
+
+    <div class="bottom-bar">
+        <button>Advertising</button>
+        <button>Business</button>
+        <button>privacy</button>
+        <button>terms</button>
+        <button> setting</button>
+    </div>
+</body>
+</html>
+
+

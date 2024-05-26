@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Task grid 2</title>
+    <style>
+        .parent{
+         display: grid;
+         grid-template-rows: 15% 50% 35%;
+         grid-template-columns:repeat(3,1fr ) ;
+         row-gap: 5px;
+         column-gap: 5px;
+    
+        }
+        .f1
+      {
+        background-color: black;
+        grid-column: 1/5;
+      }
+      .f2
+      {
+        background-color: orange;
+        grid-column: 1/3;
+      }
+      .f3
+      {
+        background-color: green;
+      }
+      .f4
+      {
+        background-color: blue;
+        grid-column: 1/5;
+      }
+    </style>
+</head>
+<body>
+  <div class="parent" style="height: 500px;background-color: white;">
+    <div class="f1"></div>
+    <div class="f2"></div>
+    <div class="f3"></div>
+    <div class="f4"></div>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+
+  <link rel="stylesheet" href="test.css" type ="text/css"/>
+<style>
+div {background-color: green;}
+div p{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  display:inline-block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: green;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background:green; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background:green;}
+.dd{
+  color:orange;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <p>Home</p>
+  <p>About</p>
+  <ul>
+    <li>
+      <p class="dd">Products</p>
+      <ul>
+        <li><p>Engineering</p></li>
+        <li><P>Telecom</P></li>
+        <li><p>Energy</p></li>
+        <li><p>Fiance</p></li>
+        <li><p>Consultancy</p></li>
+      </ul>
+    </li>
+  </ul>
+  <p>Services</p>
+  <p>Contact</p>
+</div>
+
+</body>
+</html>

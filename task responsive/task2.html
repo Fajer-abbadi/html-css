@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/1ec8c0ecbd.js" crossorigin="anonymous"></script>
+    <title>exercise3</title>
+    <style>
+        .p
+        {
+            display: grid;grid-template-rows: 1fr 2fr;row-gap: 5px;
+        }
+        .x
+        {
+            display: grid;grid-template-columns: repeat(6, 1fr);grid-template-rows: repeat(2, 1fr);height: 32vh;
+        }
+        .y
+        {
+            display: grid;grid-template-columns: 70% 30%;
+        }
+        .g
+        {
+            background-color: #343A40;margin: 1vh;
+        }
+        .t
+        {
+            display: grid;grid-template-columns: repeat(2, 1fr);grid-template-rows: repeat(3, 1fr);margin-top: 5vh;
+        }
+        @media (max-width:900px)
+        {
+            
+        }
+    </style>
+
+</head>
+<body>
+    <div class="p">
+        <div class="x">
+            <div style="background-color: #27A9E3;margin: 1vh;"><i class="fa-sharp fa-regular fa-grid-horizontal" style="color: #ffffff;font-size: 25px;"></i></div>
+            <div style="background-color: #28B779; grid-column: 2/4;margin: 1vh"><i class="fa-solid fa-chart-mixed" style="color: #ffffff;"></i></div>
+            <div style="background-color: #FFB848;margin: 1vh"></div>
+            <div style="background-color: #DA542E;margin: 1vh"></div>
+            <div style="background-color: #2255A4;margin: 1vh"></div>
+            <div style="background-color: #DA542E;grid-column: 1/3;margin: 1vh"></div>
+            <div style="background-color: #2255A4;margin: 1vh"></div>
+            <div style="background-color: #27A9E3;margin: 1vh"></div>
+            <div style="background-color: #28B779;margin: 1vh"></div>
+            <div style="background-color: #FFB848;margin: 1vh"></div>
+        </div>
+        <div class="y">
+            <div>
+                <img src="analysis.webp" >
+            </div>
+            <div class="t">
+                <div class="g"></div>
+                <div class="g"></div>
+                <div class="g"></div>
+                <div class="g"></div>
+                <div class="g"></div>
+                <div class="g"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
