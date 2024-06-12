@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Task grid5</title>
-        <style>
-            .grid-parent{display: grid;grid-template-columns:auto auto auto auto;width: 500px;height: 500px;gap: 5px;
-                background-color: rgb(138, 198, 244);  margin: auto;margin-top: 20px;padding: 5px;text-align: center;}
-            .grid-parent>div{background-color: rgb(228, 231, 234);margin: 10px;}
-            #display {
+<head>
+    <title>Task grid5</title>
+    <style>
+        .grid-parent {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            width: 500px;
+            height: 500px;
+            gap: 5px;
+            background-color: rgb(138, 198, 244);
+            margin: auto;
+            margin-top: 20px;
+            padding: 5px;
+            text-align: center;
+        }
+        .grid-parent > div {
+            background-color: rgb(228, 231, 234);
+            margin: 10px;
+        }
+        #display {
             grid-column: 1 / 5;
             height: 50px;
             background-color: white;
@@ -17,38 +30,81 @@
             margin-top: 1%;
             padding-top: 3%;
         }
-        </style>
-        
+    </style>
+</head>
+<body style="background-color: rgb(168, 191, 126);">
+    <div id="d1" class="grid-parent" style="text-align: center; font-size: 25px;">
+        <input type="text" id="display" disabled>
+        <div id="g1">1</div>
+        <div id="g2">2</div>
+        <div id="g3">3</div>
+        <div id="g4" style="background-color: yellow;">+</div>
+        <div id="g5">4</div>
+        <div id="g6">5</div>
+        <div id="g7">6</div>
+        <div id="g8" style="background-color: yellow;">-</div>
+        <div id="g9">7</div>
+        <div id="g10">8</div>
+        <div id="g11">9</div>
+        <div id="g12" style="background-color: yellow;">*</div>
+        <div id="g13" style="background-color: hotpink;">C</div>
+        <div id="g14">0</div>
+        <div id="g15">=</div>
+        <div id="g16" style="background-color: yellow;">/</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const display = document.getElementById('display');
+            let currentInput = '';
+            let currentOperation = null;
+            let firstOperand = null;
 
-    </head>
-    <body style="background-color:rgb(168,191,126);">
-        <div class="grid-parent " style="text-align: center; font-size: 25px;">
-            <input type="text" id="display"disabled >
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div style="background-color:yellow;">+</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div style="background-color: yellow;">-</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div style="background-color: yellow;">*</div>
-            <div style="background-color: hotpink;">c</div>
-            <div>0</div>
-            <div>=</div>
-           <div style="background-color: yellow;">/</div>
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            })
+            const buttons = document.querySelectorAll('.grid-parent > div');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const value = button.innerText;
+                    if (!isNaN(value)) {
+                        currentInput += value;
+                        display.value = currentInput;
+                    } else if (value === 'C') {
+                        currentInput = '';
+                        currentOperation = null;
+                        firstOperand = null;
+                        display.value = '';
+                    } else if (value === '=') {
+                        if (currentOperation && firstOperand !== null) {
+                            currentInput = operate(firstOperand, currentInput, currentOperation);
+                            display.value = currentInput;
+                            currentOperation = null;
+                            firstOperand = null;
+                        }
+                    } else {
+                        if (currentInput !== '') {
+                            if (firstOperand === null) {
+                                firstOperand = currentInput;
+                                currentOperation = value;
+                                currentInput = '';
+                            } else {
+                                firstOperand = operate(firstOperand, currentInput, currentOperation);
+                                currentOperation = value;
+                                currentInput = '';
+                                display.value = firstOperand;
+                            }
+                        }
+                    }
+                });
+            });
 
-           
+            function operate(firstOperand, secondOperand, operation) {
+                const a = parseFloat(firstOperand);
+                const b = parseFloat(secondOperand);
+                if (operation === '+') return (a + b).toString();
+                if (operation === '-') return (a - b).toString();
+                if (operation === '*') return (a * b).toString();
+                if (operation === '/') return (a / b).toString();
+                return '';
+            }
+        });
     </script>
-
-
-    </body>
-
+</body>
 </html>
