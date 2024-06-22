@@ -14,7 +14,6 @@
     href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/boosted.min.css"
     rel="stylesheet"
 
-    <title>orange</title>
     
 </head>
 
@@ -76,6 +75,21 @@
                 <div class="container">
                     <h1>Create an account </h1>
                     <form id="fom1" class="fom2">
+                      <div class="mb-3 ms-5">
+                        <label for="exampleInputEmail1" class="form-label"
+                          >User name</label
+                        >
+                        <input
+                          type="user"
+                          class="form-control w-100"
+                          id="user1"
+                          aria-describedby="emailHelp"
+                        />
+                        <div id="userHelp" class="form-text">
+                          We'll never share your email with anyone else.
+                        </div>
+                      </div>
+
                         <div class="mb-3 ms-5">
                           <label for="exampleInputEmail1" class="form-label"
                             >Email address</label
@@ -90,6 +104,7 @@
                             We'll never share your email with anyone else.
                           </div>
                         </div>
+                        
           
                         <div class="mb-3 ms-5">
                           <label for="exampleInputmobail1" class="form-label"
@@ -117,6 +132,19 @@
                             The Password should be between 6-18 characters
                           </div>
                         </div>
+                        <div class="mb-3 ms-5">
+                          <label for="exampleInputPassword1" class="form-label"
+                            >confirm Password</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control w-100"
+                            id="exampleInputPassword2"
+                          />
+                          <div id="pass2Help" class="form-text">
+                            The Password should be between 6-18 characters
+                          </div>
+                        </div>
                         <div class="mb-3 form-check ms-5">
                           <input
                             type="checkbox"
@@ -129,27 +157,27 @@
                             <a class="link-opacity-100" href="#"> terms & conditions</a>
                             Orange.
                           </label>
+                          <span id="p1"></span>
                         </div>
                         <div class="mb-3 form-check ms-5">
                           <input
                             type="checkbox"
                             class="form-check-input"
-                            id="exampleCheck1"
+                            id="exampleCheck2"
                           />
           
                           <label class="form-check-label fs-6" for="exampleCheck1">
                             Receive Coding Academy Newsletter.</label
-                          >
+                          > <span id="p2"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-2 ms-5 w-100">
+                        <button type="submit" class="btn btn-primary mt-2 ms-5 w-100" id="submitt">
                           Submit
                         </button>
                         <br /><br />
                         <button
                           type="submit"
-                          class="btn btn-white mt-2 ms-5 w-100 border button2"
-                        >
-                          Already have an account? Login
+                          class="btn btn-white mt-2 ms-5 w-100 border button2"<a href="welcome.html"></a>
+                          <a href="login.html" style="text-decoration: none;">Already have an account? Login</a>
                         </button>
                       </form>
                     </div>
@@ -157,10 +185,6 @@
                 </div>
               </div>
               <script src="orange.js">
-      
-     
-         
-    
               </Script>
 </body>
 
