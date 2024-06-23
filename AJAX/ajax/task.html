@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX Request with JavaScript</title>
+  </head>
+  <body>
+    <h1>AJAX Request with JavaScript</h1>
+    <form action="" onsubmit="return false;">
+      <textarea
+        name="comment"
+        id="comment"
+        rows="1"
+        style="display: inline"
+      ></textarea>
+      <button id="comment-btn" type="button">Send comment</button>
+    </form>
+    <h2>Get comment:</h2>
+    <h2 id="input"></h2>
+    <div id="chat-box"></div>
+
+    <script>
+      function setupEventListener() {
+        document
+          .getElementById("comment")
+          .addEventListener("input", function () {
+            var text = this.value;
+            document.getElementById("input").innerText = text;
+          });
+      }
+
+      function addCommentToChatBox(comment) {
+        var chatBox = document.getElementById("chat-box");
+        var newMessage = document.createElement("div");
+        newMessage.classList.add("chat-message");
+        newMessage.innerText = comment;
+        chatBox.appendChild(newMessage);
+        document.getElementById("comment").value = ""; 
+        document.getElementById("input").innerText = ""; 
+      }
+
+      function sendComment() {
+        var text = document.getElementById("comment").value;
+
+        if (text) {
+          let comments = JSON.parse(localStorage.getItem("comments")) || [];
+          comments.push(text);
+          localStorage.setItem("comments", JSON.stringify(comments));
+
+          addCommentToChatBox(text);
+        }
+      }
+
+      function loadComments() {
+        let comments = JSON.parse(localStorage.getItem("comments")) || [];
+        comments.forEach((comment) => {
+          addCommentToChatBox(comment);
+        });
+      }
+
+      document
+        .getElementById("comment-btn")
+        .addEventListener("click", function () {
+          sendComment();
+        });
+
+      setupEventListener();
+      loadComments();
+    </script>
+  </body>
+</html>
