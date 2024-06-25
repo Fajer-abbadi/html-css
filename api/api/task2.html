@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="searchvideo" placeholder="Enter search query">
+        <button onclick="fetchVideos()">Search</button>
+        <div id="videoData"></div>
+    </div>
+
+    <script>
+        function fetchVideos() {
+            const apiKey = 'AIzaSyC8-nvA85Owx-PhFyeLO_oyi0Ov_1Ej3FY';
+            const search = document.getElementById('searchvideo').value;
+            const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${search}&key=${apiKey}&maxResults=10`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let videoData = '';
+                    for (let i = 0; i < data.items.length; i++) {
+                        const video = data.items[i];
+                        videoData += `
+                            <div class="video">
+                                <img src="${video.snippet.thumbnails.default.url}" alt="${video.snippet.title}">
+                                <h3>${video.snippet.title}</h3>
+                            </div>
+                        `;
+                    }
+                    document.getElementById('videoData').innerHTML = videoData;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('videoData').innerHTML = '<p>Videos not found.</p>';
+                });
+        }
+    </script>
+</body>
+
+</html>
